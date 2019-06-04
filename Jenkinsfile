@@ -20,11 +20,10 @@ pipeline{
     }
 
     stage ('Deployment Stage'){
-      steps{
-        withMaven(maven : 'apache-maven-3.6.1'){
-          sh 'mvn deploy'
+      steps {
+            echo "pipeline success!"
+            archive 'target/*.jar'
         }
-      }
     }
 
   }
